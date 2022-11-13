@@ -6,32 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <script src="./src/main.js"></script>
 </head>
 <body>
     
 <div id="app"> 
 
 
-{{ sup }}  {{ Wood }}
 
-
+    <Appbtn> Click me  </Appbtn>
+    
+    
 
 
 </div>
 
-<script>
+<script type="module">
 
-    Vue.createApp({
-                              data() {
-                                    return {
-                                        sup: "Yo  ", 
-                                        Wood: "Web Ninja"
-                                    }
-                                }
+    import  Appbtn from "./src/js/components/AppButtoon.js"; 
 
+    let app = {
+
+            components: {
+                
+                'Appbtn': Appbtn,
+            
+            }
                  
+        
 
-    }).mount("#app")
+    };
+
+
+
+
+Vue.createApp(app).mount("#app")
 
 </script>
 
